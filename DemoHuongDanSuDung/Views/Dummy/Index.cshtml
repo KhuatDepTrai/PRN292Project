@@ -1,0 +1,15 @@
+﻿@using DemoHuongDanSuDung.Models
+@model System.Collections.Generic.List<DemoHuongDanSuDung.Models.Dummy>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ALL DUMMY</h2>
+@foreach (Dummy dm in Model)
+{
+    <h3>@dm.Name</h3> 
+    <p>@dm.DummyDate</p>
+    @Html.ActionLink(@dm.Name,"Edit", new {id = dm.Id})
+}
